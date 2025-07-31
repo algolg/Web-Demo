@@ -15,4 +15,4 @@ USER root
 
 COPY web/index.nginx-debian.html /var/www/html/
 
-RUN service nginx start
+CMD ["nginx", "-g", "daemon off;"]

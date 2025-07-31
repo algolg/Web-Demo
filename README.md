@@ -14,8 +14,8 @@ Make sure to install Docker first
     docker compose up -d
     ```
 
-3. Attach (access the container's shell)
+3. Enter the container's shell
 
     ```sh
-    docker attach web
+    docker exec -it web /bin/bash
     ```
