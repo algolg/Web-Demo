@@ -1,0 +1,18 @@
+FROM ubuntu:latest
+
+WORKDIR /root
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    sudo \
+    iptables \
+    ufw \
+    iproute2 \
+    tcpdump \
+    nginx
+EXPOSE 80 4444
+USER root
+
+COPY web/index.nginx-debian.html /var/www/html/
+
+RUN service nginx start
